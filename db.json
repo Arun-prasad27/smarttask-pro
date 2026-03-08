@@ -1,0 +1,35 @@
+{
+  "tasks": [
+    {
+      "id": "8987",
+      "title": "Learn React",
+      "priority": "High",
+      "status": "completed"
+    },
+    {
+      "id": "76cb",
+      "title": "Learn CRUD method",
+      "priority": "High",
+      "status": "pending"
+    },
+    {
+      "id": "5716",
+      "title": "Learn Navigate pages",
+      "priority": "Low",
+      "status": "completed"
+    }
+  ],
+  "users": [
+  {
+    "id": "1",
+    "email": "admin@gmail.com",
+    "password": "123456"
+  },
+  {
+    "id": "2",
+    "email": "user@gmail.com",
+    "password": "123456"
+  }
+]
+ 
+}
