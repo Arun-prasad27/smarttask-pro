@@ -1,14 +1,17 @@
 # SmartTask Pro
 
-A task management dashboard built with React.
+SmartTask Pro is a simple task management application built with React.  
+It includes authentication, protected routes, and task CRUD operations.
 
 ## Features
 
-- Login authentication
-- Protected routes
-- Task CRUD operations
-- Axios API calls
+- User Login
+- Protected Routes
+- Create Tasks
+- Update Tasks
+- Delete Tasks
 - Fake backend using json-server
+- API requests using axios
 
 ## Tech Stack
 
@@ -16,8 +19,13 @@ A task management dashboard built with React.
 - React Router
 - Axios
 - JSON Server
+- Vite
 
 ## Run the Project
+
+Clone the repository
+
+git clone https://github.com/Arun-prasad27/smarttask-pro.git
 
 Install dependencies
 
