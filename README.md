@@ -1,6 +1,5 @@
 # SmartTask Pro
 
-
 SmartTask Pro is a modern **React-based task management application** that allows users to create, manage, and track tasks using a Kanban-style board.
 
 The application demonstrates core frontend development concepts including authentication, CRUD operations, API communication, protected routes, and responsive UI using Tailwind CSS.
@@ -21,8 +20,6 @@ The application demonstrates core frontend development concepts including authen
 
 ---
 
-
-
 ## Features
 
 - User Login
@@ -32,7 +29,6 @@ The application demonstrates core frontend development concepts including authen
 - Delete Tasks
 - Fake backend using json-server
 - API requests using axios
-
 
 ## Tech Stack
 
@@ -78,8 +74,7 @@ Kanban-style board showing task status.
 
 Manage tasks with CRUD operations and filtering.
 
-</markdown>
----
+## </markdown>
 
 ## Installation
 
@@ -96,6 +91,8 @@ Open in browser: http://localhost:5173
 Test Credentials
 Admin user: admin@gmail.com
 Password: 123456
+
+<markdown>
 
 Project Structure
 src
@@ -120,6 +117,7 @@ src
 ├── main.jsx
 └── index.css
 
+</markdown>
 API Endpoints
 GET /tasks
 POST /tasks
@@ -134,4 +132,3 @@ https://github.com/Arun-prasad27
 
 Portfolio
 https://arun-prasad27.github.io/My-Portfolio/
-
