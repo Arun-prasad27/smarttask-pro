@@ -95,6 +95,8 @@ Password: 123456
 <markdown>
 
 Project Structure
+
+```
 src
 ├── components
 │ ├── KanbanBoard.jsx
@@ -116,6 +118,7 @@ src
 ├── App.jsx
 ├── main.jsx
 └── index.css
+```
 
 </markdown>
 API Endpoints
