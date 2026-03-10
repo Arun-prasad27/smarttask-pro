@@ -1,34 +1,32 @@
 const KanbanColumn = ({ title, tasks }) => {
   return (
-    <div
-      style={{
-        flex: 1,
-        background: "#f4f4f4",
-        padding: "10px",
-        borderRadius: "6px",
-        minHeight: "300px",
-      }}
-    >
-      <h4>{title}</h4>
+    <div className="bg-gray-100 rounded-lg p-4 min-h-[300px] shadow-sm">
+
+      <h3 className="text-lg font-semibold mb-4 text-gray-700">
+        {title}
+      </h3>
 
       {tasks.length === 0 ? (
-        <p style={{ color: "gray" }}>No tasks</p>
+        <p className="text-gray-400 text-sm">No tasks</p>
       ) : (
-        tasks.map((task) => (
-          <div
-            key={task.id}
-            style={{
-              background: "white",
-              padding: "8px",
-              marginTop: "8px",
-              borderRadius: "4px",
-            }}
-          >
-            <p>{task.title}</p>
-            <small>{task.priority}</small>
-          </div>
-        ))
+        <div className="space-y-3">
+          {tasks.map((task) => (
+            <div
+              key={task.id}
+              className="bg-white p-3 rounded-md shadow hover:shadow-md transition"
+            >
+              <p className="font-medium text-gray-800">
+                {task.title}
+              </p>
+
+              <p className="text-sm text-gray-500 mt-1">
+                Priority: {task.priority}
+              </p>
+            </div>
+          ))}
+        </div>
       )}
+
     </div>
   );
 };

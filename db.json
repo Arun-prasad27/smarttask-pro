@@ -4,32 +4,57 @@
       "id": "8987",
       "title": "Learn React",
       "priority": "High",
-      "status": "completed"
+      "status": "in-progress"
     },
     {
       "id": "76cb",
       "title": "Learn CRUD method",
       "priority": "High",
-      "status": "pending"
+      "status": "in-progress"
     },
     {
       "id": "5716",
       "title": "Learn Navigate pages",
       "priority": "Low",
       "status": "completed"
+    },
+    {
+      "id": "3a96",
+      "title": "Learn Tailwind css",
+      "priority": "High",
+      "status": "pending"
+    },
+    {
+      "id": "5b96",
+      "title": "Learn Github",
+      "priority": "Medium",
+      "status": "in-progress"
+    },
+    {
+      "id": "f7be",
+      "title": "Learn Kanbanboard",
+      "priority": "Medium",
+      "status": "pending"
+    },
+    {
+      "id": "83a3",
+      "title": "workout 1 hour",
+      "priority": "High",
+      "status": "pending"
     }
   ],
   "users": [
-  {
-    "id": "1",
-    "email": "admin@gmail.com",
-    "password": "123456"
-  },
-  {
-    "id": "2",
-    "email": "user@gmail.com",
-    "password": "123456"
-  }
-]
- 
+    {
+      "id": "1",
+      "name": "Arun",
+      "email": "admin@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "email": "user@gmail.com",
+      "password": "123456"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

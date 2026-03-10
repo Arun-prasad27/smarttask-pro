@@ -106,9 +106,18 @@ const TasksPage = () => {
     try {
       const taskToUpdate = tasks.find((task) => task.id === id);
 
+      let newStatus;
+      if (taskToUpdate.status === "pending") {
+        newStatus = "in-progress";
+      } else if (taskToUpdate.status === "in-progress") {
+        newStatus = "completed";
+      } else {
+        newStatus = "pending";
+      }
+
       const updatedTask = {
         ...taskToUpdate,
-        status: taskToUpdate.status === "pending" ? "completed" : "pending",
+        status: newStatus,
       };
 
       await updateTask(id, updatedTask);
@@ -122,37 +131,74 @@ const TasksPage = () => {
   };
 
   return (
-    <div>
-      <div style={{ marginBottom: "10px" }}>
-        <Link to="/dashboard">
-          <button>← Back to Dashboard</button>
-        </Link>
-      </div>
-      <TaskForm
-        title={title}
-        priority={priority}
-        editingId={editingId}
-        setTitle={setTitle}
-        setPriority={setPriority}
-        onSubmit={handleSubmit}
-        submitting={submitting}
-      />
-      <div>
-        <button onClick={() => setFilter("all")}>All</button>
-        <button onClick={() => setFilter("pending")}>Pending</button>
-        <button onClick={() => setFilter("completed")}>Completed</button>
-      </div>
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-4xl mx-auto">
+        {/* Back Button */}
+        <div className="mb-6">
+          <Link to="/dashboard">
+            <button className="text-blue-600 hover:text-blue-800 font-medium">
+              ← Back to Dashboard
+            </button>
+          </Link>
+        </div>
 
-      <TaskList
-        tasks={filteredTasks}
-        onEdit={(task) => {
-          setEditingId(task.id);
-          setTitle(task.title);
-          setPriority(task.priority);
-        }}
-        onDelete={handleDeleteTask}
-        onToggleStatus={handleToggleStatus}
-      />
+        {/* Task Form */}
+        <TaskForm
+          title={title}
+          priority={priority}
+          editingId={editingId}
+          setTitle={setTitle}
+          setPriority={setPriority}
+          onSubmit={handleSubmit}
+          submitting={submitting}
+        />
+
+        {/* Filter Buttons */}
+        <div className="flex gap-3 mb-4">
+          <button
+            onClick={() => setFilter("all")}
+            className={`px-4 py-1 rounded-md text-sm ${
+              filter === "all" ? "bg-blue-600 text-white" : "bg-white border"
+            }`}
+          >
+            All
+          </button>
+
+          <button
+            onClick={() => setFilter("pending")}
+            className={`px-4 py-1 rounded-md text-sm ${
+              filter === "pending"
+                ? "bg-yellow-500 text-white"
+                : "bg-white border"
+            }`}
+          >
+            Pending
+          </button>
+
+          <button
+            onClick={() => setFilter("completed")}
+            className={`px-4 py-1 rounded-md text-sm ${
+              filter === "completed"
+                ? "bg-green-600 text-white"
+                : "bg-white border"
+            }`}
+          >
+            Completed
+          </button>
+        </div>
+
+        {/* Task List */}
+        <TaskList
+          tasks={filteredTasks}
+          onEdit={(task) => {
+            setEditingId(task.id);
+            setTitle(task.title);
+            setPriority(task.priority);
+          }}
+          onDelete={handleDeleteTask}
+          onToggleStatus={handleToggleStatus}
+        />
+      </div>
     </div>
   );
 };
