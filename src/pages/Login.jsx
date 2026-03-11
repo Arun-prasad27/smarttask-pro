@@ -11,7 +11,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await axios.get("http://localhost:3001/users", {
+      const res = await axios.get("https://smarttask-pro.onrender.com/users", {
         params: {
           email: email.trim(),
         },
