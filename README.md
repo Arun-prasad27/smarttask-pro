@@ -1,8 +1,10 @@
 # SmartTask Pro
 
-SmartTask Pro is a modern **React-based task management application** that allows users to create, manage, and track tasks using a Kanban-style board.
+SmartTask Pro is a modern task management web application built with React that allows users to create, manage, and track tasks efficiently using a Kanban-style workflow.
 
-The application demonstrates core frontend development concepts including authentication, CRUD operations, API communication, protected routes, and responsive UI using Tailwind CSS.
+The project demonstrates key frontend development concepts such as authentication, protected routing, CRUD operations, API integration, and responsive UI design. It uses a mock REST API powered by JSON Server and is deployed using modern cloud platforms.
+
+This project was built as part of a frontend developer portfolio to showcase practical skills in building real-world React applications.
 
 ---
 
