@@ -11,15 +11,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-900 text-white px-6 py-4 flex items-center justify-between">
+    <nav className="bg-gray-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-3">
 
       <h1 className="text-xl font-semibold">
         SmartTask Dashboard
       </h1>
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-3">
 
-        <p className="text-gray-300 text-sm">
+        <p className="text-gray-300 text-sm whitespace-nowrap">
           Welcome, {user?.name || "user"} 👋
         </p>
 

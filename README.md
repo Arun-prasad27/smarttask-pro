@@ -8,29 +8,20 @@ This project was built as part of a frontend developer portfolio to showcase pra
 
 ---
 
-## Features
+##  Live Demo
 
-- User Login Authentication
-- Protected Routes
-- Task Management (Create, Edit, Delete)
-- Task Status Management
-- Kanban Board (Pending / In Progress / Completed)
-- Task Filtering
-- Responsive UI using Tailwind CSS
-- API communication using Axios
-- Fake REST API using JSON Server
+Frontend:  
+https://smarttask-pro.vercel.app/
+
+Backend API:  
+https://smarttask-pro.onrender.com
+
+Test Credentials:
+
+Email: admin@gmail.com  
+Password: 123456
 
 ---
-
-## Features
-
-- User Login
-- Protected Routes
-- Create Tasks
-- Update Tasks
-- Delete Tasks
-- Fake backend using json-server
-- API requests using axios
 
 ## Tech Stack
 
@@ -44,13 +35,31 @@ Frontend:
 Backend (Mock API):
 
 - JSON Server
-- Vite
+
+Deployment:
+
+- Vercel (Frontend)
+- Render (Backend)
 
 Tools:
 
 - Vite
 - Git
 - GitHub
+
+---
+
+## Features
+
+- User Login Authentication
+- Protected Routes
+- Task Management (Create, Edit, Delete)
+- Task Status Management
+- Kanban Board (Pending / In Progress / Completed)
+- Task Filtering
+- Responsive UI using Tailwind CSS
+- API communication using Axios
+- Fake REST API using JSON Server
 
 ---
 
@@ -84,21 +93,24 @@ Clone the repository
 
 git clone https://github.com/Arun-prasad27/smarttask-pro.git
 
-Go to Project folder: cd smarttask-pro
-Install dependencies: npm install
-start frontend server: npm run dev
-start fake API server: npx json-server --watch db.json --port 3001
-Open in browser: http://localhost:5173
-
-Test Credentials
-Admin user: admin@gmail.com
-Password: 123456
+- Go to Project folder: cd smarttask-pro
+- Install dependencies: npm install
+- start frontend server: npm run dev
+- start backend server: cd backend -> npm install -> node server.js
+- Open in browser: http://localhost:5173
 
 <markdown>
 
 Project Structure
 
 ```
+smarttask-pro
+│
+├── backend
+│ ├── db.json
+│ ├── server.js
+│ └── package.json
+│
 src
 ├── components
 │ ├── KanbanBoard.jsx
@@ -120,17 +132,20 @@ src
 ├── App.jsx
 ├── main.jsx
 └── index.css
+│
+├── screenshots
+│ ├── loginpage.png
+│ ├── dashboard.png
+│ └── taskpage.png
+│
+└── README.md
 ```
 
 </markdown>
-API Endpoints
-GET /tasks
-POST /tasks
-PUT /tasks/:id
-DELETE /tasks/:id
 
-Author
-Arun Prasad
+## Author
+
+**Arun Prasad**
 
 GitHub
 https://github.com/Arun-prasad27
