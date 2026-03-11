@@ -1,4 +1,5 @@
 /* eslint-env node */
+//deployment trigger
 import jsonServer from "json-server";
 
 const server = jsonServer.create();
