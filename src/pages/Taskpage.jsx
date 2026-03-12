@@ -37,7 +37,15 @@ const TasksPage = () => {
     fetchTasks();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+        <div className="animate-spin h-10 w-10 border-4 border-blue-500 border-t-transparent rounded-full mb-4"></div>
+
+        <p className="text-gray-600 text-sm text-center">Fetching tasks...</p>
+      </div>
+    );
+  }
   if (error) return <p>{error}</p>;
 
   //create and update task
