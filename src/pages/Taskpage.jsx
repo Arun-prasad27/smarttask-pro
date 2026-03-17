@@ -5,13 +5,13 @@ import TaskList from "../components/Tasklist";
 import { getTasks, addTask, deleteTask, updateTask } from "../services/api";
 
 const TasksPage = () => {
-  const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [title, setTitle] = useState("");
-  const [editingId, setEditingId] = useState(null);
-  const [priority, setPriority] = useState("");
-  const [submitting, setSubmitting] = useState(false);
+  const [tasks, setTasks] = useState([]); // main state to hold tasks data
+  const [loading, setLoading] = useState(false); // loading state for API calls
+  const [error, setError] = useState(null); // error state for API calls
+  const [title, setTitle] = useState(""); // form state for task title
+  const [editingId, setEditingId] = useState(null); // state to track which task is being edited
+  const [priority, setPriority] = useState(""); // form state for task priority
+  const [submitting, setSubmitting] = useState(false); // state to track form submission status
   const [filter, setFilter] = useState("all");
 
   const filteredTasks = tasks.filter((task) => {
@@ -22,22 +22,22 @@ const TasksPage = () => {
 
   //handle API request
   useEffect(() => {
-    const fetchTasks = async () => {
-      try {
-        setLoading(true);
-        const response = await getTasks();
-        setTasks(response.data);
+    const fetchTasks = async () => { //fetch tasks from backend
+      try { 
+        setLoading(true); // Start loading
+        const response = await getTasks(); // API call to fetch tasks
+        setTasks(response.data); // Update state with fetched tasks
       } catch (err) {
-        setError("Failed to fetch tasks");
+        setError("Failed to fetch tasks"); // Set error message if API call fails
       } finally {
-        setLoading(false);
+        setLoading(false); // End loading regardless of success or failure
       }
     };
 
-    fetchTasks();
+    fetchTasks(); // Call the function to fetch tasks when component mounts
   }, []);
 
-  if (loading) {
+  if (loading) { // Show loading spinner while fetching data
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
         <div className="animate-spin h-10 w-10 border-4 border-blue-500 border-t-transparent rounded-full mb-4"></div>
@@ -46,7 +46,7 @@ const TasksPage = () => {
       </div>
     );
   }
-  if (error) return <p>{error}</p>;
+  if (error) return <p>{error}</p>; // Show error message if there's an error fetching data
 
   //create and update task
   const handleSubmit = async () => {
@@ -75,15 +75,15 @@ const TasksPage = () => {
       } else {
         // CREATE FLOW
 
-        const newTask = {
+        const newTask = { // create task object to send to backend
           title,
           priority,
           status: "pending",
         };
 
-        const response = await addTask(newTask);
+        const response = await addTask(newTask); // API call to add task
 
-        setTasks((prev) => [...prev, response.data]);
+        setTasks((prev) => [...prev, response.data]); // Update state with new task added to the list
       }
 
       // Reset form state
@@ -101,9 +101,9 @@ const TasksPage = () => {
     const confirmDelete = window.confirm("Are you sure?");
     if (!confirmDelete) return;
     try {
-      await deleteTask(id);
+      await deleteTask(id); // API call to delete task
 
-      setTasks((prev) => prev.filter((task) => task.id !== id));
+      setTasks((prev) => prev.filter((task) => task.id !== id)); // Update state by removing the deleted task from the list
     } catch (err) {
       setError("Failed to delete task");
     }
