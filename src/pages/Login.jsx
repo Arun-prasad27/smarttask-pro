@@ -7,7 +7,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const [serverMessage, setServerMessage] = useState(
-    "Server waking up... this may take up to 30 - 50 seconds on first load."
+    "Server waking up... this may take up to 30 - 50 seconds on first load.",
   );
 
   const [loading, setLoading] = useState(false);
@@ -20,19 +20,16 @@ function Login() {
     setLoading(true);
 
     try {
-      const res = await axios.get(
-        "https://smarttask-pro.onrender.com/users",
-        {
-          params: {
-            email: email.trim(),
-          },
-        }
-      );
+      const res = await axios.get("https://smarttask-pro.onrender.com/users", {
+        params: {
+          email: email.trim(),
+        },
+      });
 
       setServerMessage(""); // hide message when server responds
 
       if (res.data.length > 0 && res.data[0].password === password.trim()) {
-        localStorage.setItem("user", JSON.stringify(res.data[0]));
+        localStorage.setItem("user", JSON.stringify(res.data[0])); // Store user data in localStorage for session management
         navigate("/dashboard");
       } else {
         alert("Invalid credentials");
@@ -47,7 +44,6 @@ function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-100 to-blue-200">
       <div className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-md">
-        
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">
           SmartTask Login
         </h2>
@@ -60,7 +56,6 @@ function Login() {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
-
           <input
             type="email"
             placeholder="Email"
@@ -84,7 +79,6 @@ function Login() {
             disabled={loading}
             className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-200 flex items-center justify-center"
           >
-
             {loading ? (
               <>
                 <span className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full mr-2"></span>
@@ -93,9 +87,7 @@ function Login() {
             ) : (
               "Login"
             )}
-
           </button>
-
         </form>
       </div>
     </div>
